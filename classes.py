@@ -16,6 +16,7 @@ class Block:
 class Player:
     VEL = 5
     JUMP_HEIGHT = math.sqrt(40)
+    NGTV_JUMP_HEIGHT = 0 - JUMP_HEIGHT
     def __init__(self, x, y):
         self.jump = False
         self.x = x
@@ -34,7 +35,7 @@ class Player:
             if keys[pygame.K_SPACE]:
                 self.jump = True
         else:
-            if self.JUMP_HEIGHT >= 0 - self.JUMP_HEIGHT:
+            if self.JUMP_HEIGHT >= self.NGTV_JUMP_HEIGHT:
                 neg = 1
                 if self.JUMP_HEIGHT < 0:
                     neg = -1
