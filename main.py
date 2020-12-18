@@ -1,4 +1,5 @@
 import pygame
+import os
 from classes import *
 from constants import *
 
@@ -12,7 +13,7 @@ BLACK = (0, 0, 0)
 def Main():
     FPS = 60
     clock = pygame.time.Clock()
-    block = Block(WIDTH // 2, HEIGHT // 2, pygame.image.load("C:\\Users\\aweso\\work\\programming\\python\\Tools-With-Code\\2D-Minecraft-Remix\\images\\test.png"))
+    block = Block(WIDTH // 2, HEIGHT // 2, )
     while True:
         clock.tick(FPS)
         events = pygame.event.get()
