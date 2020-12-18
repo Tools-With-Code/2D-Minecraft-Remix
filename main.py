@@ -10,19 +10,29 @@ pygame.display.set_caption("2D Minecraft Remix")
 
 BLACK = (0, 0, 0)
 
+DIRT_IMG = pygame.image.load(os.path.join("images", "dirt.png"))
+
 def Main():
     FPS = 60
     clock = pygame.time.Clock()
-    dirt = Block(WIDTH // 2, HEIGHT // 2, pygame.image.load(os.path.join("images", "dirt.png")))
-    grass = Block(500, 500, pygame.image.load(os.path.join("images", "grass.png")))
+    y1 = []
+    for i in range(WIDTH // 40):
+        dirt = Block(40 * i, HEIGHT - 40, DIRT_IMG)
+        y1.append(dirt)
+    player = Player(WIDTH // 2, HEIGHT - 120)
+
     while True:
         clock.tick(FPS)
         events = pygame.event.get()
         keys = pygame.key.get_pressed()
 
         DISPLAY.fill(BLACK)
-        dirt.Draw(DISPLAY)
-        grass.Draw(DISPLAY)
+
+        for block in y1:
+            block.Draw(DISPLAY)
+        
+        player.Draw(DISPLAY)
+        player.Move(keys)
 
         for event in events:
             if event.type == pygame.QUIT:
