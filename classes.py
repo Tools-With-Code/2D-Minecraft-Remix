@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 
 class Block:
-    BLOCK_WIDTH_HEIGHT = 20
+    BLOCK_WIDTH_HEIGHT = 37
     def __init__(self, x, y, blockImg):
         self.x = x
         self.y = y
