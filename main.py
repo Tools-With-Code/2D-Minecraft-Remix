@@ -13,6 +13,7 @@ BLACK = (0, 0, 0)
 STDFONT = pygame.font.SysFont("comicsans", 100)
 
 DIRT_IMG = pygame.image.load(os.path.join("images", "dirt.png"))
+GRASS_IMG = pygame.image.load(os.path.join("images", "grass.png"))
 
 def Main():
     FPS = 60
