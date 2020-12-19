@@ -1,5 +1,6 @@
 import pygame
 import os
+import time
 from classes import *
 from constants import *
 
@@ -43,6 +44,10 @@ def Main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if time.time() > 2:
+                    
+                    y1.remove(dirt)
         
         pygame.display.update()
 
