@@ -10,6 +10,8 @@ pygame.display.set_caption("2D Minecraft Remix")
 
 BLACK = (0, 0, 0)
 
+STDFONT = pygame.font.SysFont("comicsans", 100)
+
 DIRT_IMG = pygame.image.load(os.path.join("images", "dirt.png"))
 
 def Main():
@@ -32,7 +34,9 @@ def Main():
             block.Draw(DISPLAY)
         
         player.Draw(DISPLAY)
-        player.Move(keys)
+        player.Move(keys, WIDTH, HEIGHT)
+        if player.dead:
+            player.Die(DISPLAY, STDFONT, WIDTH, HEIGHT)
 
         for event in events:
             if event.type == pygame.QUIT:
